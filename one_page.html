@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+
+<script>
+
+/*function start(){
+	/*var scroll = setInterval(function(){
+						window.scrollBy(0,1000);
+						console.log("start");
+						},1500);
+	window.scrollBy(0,1000);
+}
+
+function stop(){
+	clearInterval(scroll);
+	console.log("stop");
+}*/
+
+function scroll(){
+	$('html, body').animate({ scrollTop: $(document).height() - $(window).height() }, 4000,function(){
+		$('#top').css('visibility','visible');
+		});
+	$('#top').click(function() {
+    $('html, body').animate({ scrollTop: 0 }, 1000,function(){
+		$('#top').css('visibility','hidden');
+		});
+}
+	);
+}
+</script>
+<style>
+.page{ height:1000px;}
+</style>
+<title>Untitled Document</title>
+</head>
+
+<body>
+
+<nav style="position:fixed; float:top;">
+	<button onclick="scroll()">scroll</button>
+        <button style="position:fixed; float:bottom; visibility:hidden" id="top">scroll to top</button>
+    </nav>
+
+
+<div class="page">
+<img src="images/1.jpg" />
+</div>
+
+<div class="page">
+<img src="images/2.jpg" />
+</div>
+
+<div class="page">
+<img src="images/3.jpg" />
+</div>
+
+<div class="page">
+<img src="images/4.jpg" />
+</div>
+
+<div class="page">
+<img src="images/5.jpg" />
+</div>
+
+</body>
+</html>
