@@ -5,6 +5,7 @@ html{
 	}
 	.section{
 		height:100vh;
+		overflow: hidden;
 	}
 	.nopadding {
    position: relative;
@@ -33,7 +34,7 @@ html{
 		display: table;
 		width:100%;
 		padding:0;
-		background:url(images/3.jpg) no-repeat center center;
+		background: #5470ff;
 		background-attachment:fixed;
 		background-size:cover;
 		-webkit-background-size:cover;;

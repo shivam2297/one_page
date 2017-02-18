@@ -1,14 +1,25 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet" href="bootstrap.min.css" />
+<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="bootstrap.min.js"></script>
+
 <title>Untitled Document</title>
 </head>
 
 <body>
 
-<canvas height="70" width="70" id="loader" style="border:1px dashed #ccc">
+<canvas height="900" width="900" id="loader" style="border:1px dashed #ccc">
         </canvas>
-       
+    
+<div class="container">
+	<div class="row">
+    	<div class="col-md-3" id="cloader" style="border:1px dashed #ccc">
+        	
+        </div>
+    </div>
+</div>       
 <script>
 	var ctx = document.getElementById('loader').getContext('2d');
 	var al = 0;
@@ -22,7 +33,7 @@
 			ctx.lineWidth = 10;
 			ctx.strokeStyle = "#09f";
 			ctx.beginPath();
-			ctx.arc(35,35,30,start,diff/10+start,false);
+			ctx.arc(450,450,400,start,diff/10+start,false);
 			ctx.stroke();
 			
 			if(al >= 100)
