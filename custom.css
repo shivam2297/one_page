@@ -1,0 +1,70 @@
+/* CSS Document */
+
+html{
+		overflow: hidden;
+	}
+	.section{
+		height:100vh;
+	}
+	.nopadding {
+   position: relative;
+   padding:0px;
+   
+}
+	.nomargin{
+		margin:0px;
+	}
+	#navbar{
+		background-color:transparent;
+		background:rgba(0,0,0,0.5);
+		border-color:transparent;
+	}
+	#about_me{
+		display: table;
+		width:100%;
+		padding:0;
+		background:url(images/2.jpg) no-repeat center center;
+		background-attachment:fixed;
+		background-size:cover;
+		-webkit-background-size:cover;
+		
+	}
+	#developer_profile{
+		display: table;
+		width:100%;
+		padding:0;
+		background:url(images/3.jpg) no-repeat center center;
+		background-attachment:fixed;
+		background-size:cover;
+		-webkit-background-size:cover;;
+	}
+	#carrer_guide{
+		display: table;
+		width:100%;
+		padding:0;
+		background:url(images/5.jpg) no-repeat center center;
+		background-attachment:fixed;
+		background-size:cover;
+		-webkit-background-size:cover;
+	}
+	#contact{
+		display: table;
+		width:100%;
+		padding:0;
+		background:url(images/1.jpg) no-repeat center center;
+		background-attachment:fixed;
+		background-size:cover;
+		-webkit-background-size:cover;
+	}
+	#home{
+		display: table;
+		width:100%;
+		height:100%;
+		padding:0;
+		margin:0;
+		vertical-align:middle;
+		background: rgba(1,1,1,1);
+		background-attachment:fixed;
+		background-size:cover;
+		-webkit-background-size:cover;
+	}

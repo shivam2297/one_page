@@ -3,19 +3,102 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link type="text/css" rel="stylesheet" href="bootstrap.min.css" />
-    <link type="text/css" rel="stylesheet" href="custom.css" />
 	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
 	<script type="text/javascript" src="bootstrap.min.js"></script>
-	<script type="text/javascript" src="custom.js"></script>
-    
-	<title>One Page</title>
+	<script type="text/javascript" src="parallax.min.js"></script>
+    <script type="text/javascript" src="minified/ScrollMagic.min.js"></script>
+	<title>Untitled Document</title>
 </head>
 
+<style>
+	html{
+		overflow: hidden;
+	}
+	.section{
+		height:100vh;
+	}
+	.nopadding {
+   position: relative;
+   padding:0px;
+   
+}
+	.nomargin{
+		margin:0px;
+	}
+	#navbar{
+		background-color:transparent;
+		background:rgba(0,0,0,0.5);
+		border-color:transparent;
+	}
+	#about_me{
+		display: table;
+		width:100%;
+		padding:0;
+		background:url(images/2.jpg) no-repeat center center;
+		background-attachment:fixed;
+		background-size:cover;
+		-webkit-background-size:cover;
+		
+	}
+	#developer_profile{
+		display: table;
+		width:100%;
+		padding:0;
+		background:url(images/3.jpg) no-repeat center center;
+		background-attachment:fixed;
+		background-size:cover;
+		-webkit-background-size:cover;;
+	}
+	#carrer_guide{
+		display: table;
+		width:100%;
+		padding:0;
+		background:url(images/5.jpg) no-repeat center center;
+		background-attachment:fixed;
+		background-size:cover;
+		-webkit-background-size:cover;
+	}
+	#contact{
+		display: table;
+		width:100%;
+		padding:0;
+		background:url(images/1.jpg) no-repeat center center;
+		background-attachment:fixed;
+		background-size:cover;
+		-webkit-background-size:cover;
+	}
+	#home{
+		display: table;
+		width:100%;
+		height:100%;
+		padding:0;
+		margin:0;
+		vertical-align:middle;
+		background: rgba(1,1,1,1);
+		background-attachment:fixed;
+		background-size:cover;
+		-webkit-background-size:cover;
+	}
+
+</style>
 
 
-
-
+<script>
+		
+	function move(id){
+		if(id=="homelink")
+		$('html, body').animate({scrollTop: $('#home').offset().top}, 2000);
+		if(id=="aboutlink")
+		$('html, body').animate({scrollTop: $('#about_me').offset().top}, 2000);
+		if(id=="profilelink")
+		$('html, body').animate({scrollTop: $('#developer_profile').offset().top}, 2000);
+		if(id=="guidelink")
+		$('html, body').animate({scrollTop: $('#carrer_guide').offset().top}, 2000);
+		if(id=="contactlink")
+		$('html, body').animate({scrollTop: $('#contact').offset().top}, 2000);
+	}
+</script>
 <body style="overflow: auto">
 
 <nav class="navbar navbar-inverse navbar-fixed-top nomargin" id="navbar">
