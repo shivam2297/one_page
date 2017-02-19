@@ -12,3 +12,7 @@ function move(id){
 		if(id=="contactlink")
 		$('html, body').animate({scrollTop: $('#contact').offset().top}, 2000);
 	}
+	
+
+    
+
