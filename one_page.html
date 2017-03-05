@@ -8,54 +8,87 @@
 	<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
 	<script type="text/javascript" src="bootstrap.min.js"></script>
 	<script type="text/javascript" src="custom.js"></script>
-    
+    <!audio src="preview.mp3" preload="auto" loop="loop" autoplay="true"><!/audio>
 	<title>One Page</title>
+    
 </head>
 
-
-<script>
-	$(document).ready(function(){
-			$(".fadein").hide(0).delay(500).fadeIn(2000);			
-			$(".fadein").delay(500).fadeOut(2000);		
-    		setInterval(function(){ fadein() }, 1000);
-	});
+<style>
+.nav-wrap {
+	padding-left:0;
+	list-style: none;
+	float: right;
 	
-	function fadein(){
-		$(".fadein").fadeIn(2000);			
-		$(".fadein").delay(500).fadeOut(2000);
-	}
-</script>
-<script>
-	/*window.onscroll = function() {myFunction()};
+}
 
-	function myFunction() {
-		if (document.body.scrollTop > 700 || document.documentElement.scrollTop > 700) {
-			$(".fadein").hide(0).delay(500).fadeIn(3000);
-			console.log("output");
-		}
-	}*/
-	$(window).scroll(function () {
-		  $('.scrollfade').each(function () {
-			  if ((($(this).offset().top - $(window).scrollTop()) < 50) || (($(window).height() - ($(this).offset().top - $(window).scrollTop() + $(this).outerHeight())) < 20)) {
-				  $(this).stop().fadeTo(100, 0);
-				  
-			  } else {
-				  $(this).stop().fadeTo(100, 1);
-				  
-				  
-			  }
-		  });
-	console.log("scroll fade");
-	});
-</script>
+.nav-wrap > li {
+	float: right;
+	overflow: hidden;
+}
 
+.navmenu {
+	list-style: none;
+	margin-left: -1000px;
+	transition: 0.3s;
+}
+
+.nav-wrap.active .navmenu {
+	/*opacity: 0;*/
+	padding-left:0;
+	margin-left: 10px;
+	transition: 0.3s;
+}
+
+.navmenu > li {
+	float: left;
+	/*width: 18px;*/
+	margin: 0 5px;
+	/*border: 1px solid red;*/
+}
+
+.menu-icon {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 2.1875em;
+    height: 0.3125em;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+}
+.menu-wrap{
+	color:rgba(255,255,255,1);
+	position:fixed;
+	width:auto;
+	z-index:+1;
+	/*border:dashed;*/
+	background-color:rgba(255,255,255,1);
+	padding: 0.625em 0.9375em 0.625em 0.9375em;
+	margin-top:1.5625em;
+	margin-left:1.5625em;
+}
+</style>
 
 <body style="overflow: auto">
 
 
 
-<nav class="navbar navbar-inverse navbar-fixed-top nomargin" id="navbar">
-	<div class="container-fluid">
+<!--nav class="navbar navbar-inverse navbar-fixed-top nomargin" id="navbar">
+<!--	<div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
       	<span class="icon-bar"></span>
@@ -70,8 +103,30 @@
     	<li><a href="#" id="contactlink" onclick="move(this.id)">Contact Me</a></li>
         </ul>
     </div>
+    </div> -->
+    <div class="container menu-wrap">
+        <div class="menu-icon" onClick="myFunction(this)" style="float:left;">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>      
+        </div>
+        <div style="float: left; display:inline-block;">
+          <ul class="nav-wrap">
+          	
+            <li>
+            	
+              <ul class="navmenu h4">
+              	<li><a href="#" id="homelink" onclick="move(this.id)">HOME</a></li>
+                <li><a href="#" id="aboutlink" onclick="move(this.id)">About Me</a></li>
+                <li><a href="#" id="profilelink" onclick="move(this.id)">Developer Profile</a></li>
+                <li><a href="#" id="guidelink" onclick="move(this.id)">Carreer Guide</a></li>
+                <li><a href="#" id="contactlink" onclick="move(this.id)">Contact Me</a></li>
+              </ul>    
+            </li>
+          </ul>
+        </div>
     </div>
-</nav>
+<!--/nav-->
 
 <div class="jumbotron nopadding" id="home">
 	
@@ -81,13 +136,12 @@
        
     </div>
     
-   
     
     
 </div>
 
 
-<div class=" nomargin section img-responsive" id="about_me">
+<div class=" nomargin section" id="about_me">
 
 	<div class="container" style="padding-top:10%;">
     	<div class="row">
@@ -109,22 +163,25 @@
 
 <div class="container section" id="developer_profile">
 
-	<div class="container" style="margin-top:7%; margin-left:0; padding-left:5%">
+	<div class="container" style="margin-top:5%; margin-left:0; padding-left:5%">
     	<div class="row">
-        	<div class="col-md-4">
+        	<div class="col-md-3 col-sm-3 col-xs-3">
             	<h1 class="h1 fadein">TECHNOLOGY</h1>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-9 col-sm-9 col-xs-9">
             	<div class="container">
                 	<div class="row">
-                        <div class="col-md-4">
-                            <canvas width="100" height="100" style="border:1px dashed" id="skilla"></canvas>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <canvas width="100" height="100" class="skillbar" id="skilla"></canvas>
+                            <h5 class="h6 skillbar" style="text-align:center; font-size:15px">WORDPRESS</h5>
                         </div>
-                        <div class="col-md-4">
-                            <canvas width="100" height="100" style="border:1px dashed" id="skillb"></canvas>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <canvas width="100" height="100" class="skillbar" id="skillb"></canvas>
+                            <h5 class="h6 skillbar" style="text-align:center; font-size:15px">WORDPRESS</h5>
                         </div>
-                        <div class="col-md-4">
-                            <canvas width="100" height="100" style="border:1px dashed" id="skillc"></canvas>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <canvas width="100" height="100" class="skillbar" id="skillc"></canvas>
+                            <h5 class="h6 skillbar" style="text-align:center; font-size:15px">WORDPRESS</h5>
                         </div>
                      </div>
                  </div>
@@ -132,28 +189,42 @@
          </div>   
        
     </div>
-    <div class="container" style="margin-top:7%; margin-right:0; padding-right:5%">
+    <div class="container" style="margin-top:4%; margin-left:0; padding-left:0">
     	<div class="row">
-        	<div class="col-md-8">
+        	<div class="col-md-3 col-sm-3 col-xs-3">
             	<div class="container">
                 	<div class="row">
-                        <div class="col-md-4">
-                            <canvas width="100" height="100" style="border:1px dashed" id="skilld"></canvas>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <canvas width="100" height="100" class="skillbar" id="skilld"></canvas>
                         </div>
-                        <div class="col-md-4">
-                            <canvas width="100" height="100" style="border:1px dashed" id="skille"></canvas>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <canvas width="100" height="100" class="skillbar" id="skille"></canvas>
                         </div>
-                        <div class="col-md-4">
-                            <canvas width="100" height="100" style="border:1px dashed" id="skillf"></canvas>
+                        <div class="col-md-4 col-sm-4 col-xs-4">
+                            <canvas width="100" height="100" class="skillbar" id="skillf"></canvas>
                         </div>
                      </div>
                  </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-9 col-sm-9 col-xs-9">
             	<h1 class="h1 fadein" style="text-align: right">TOOLS</h1>
             </div>
         </div>   
     </div>
+    <div class="container" style="margin-top:3%">
+    	<div class="row">
+        	<div class="col-md-4 col-sm-12 col-xs-12">
+            	<hr style="width:100%; height:auto" />
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+            	<h4 class="h4 fadein" style="color:rgba(255,255,255,1); text-align:center">PROJECTS</h4>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12">
+            	<hr style="width:100%; height:auto" />
+            </div>
+        </div>
+    </div>
+    <img src="images/down_arrow.png" style="bottom:0; right:0; position:absolute"/>
 </div>
 
 <div class="container-fluid section" id="carrer_guide">
@@ -168,7 +239,12 @@
     
 </div>
 
-
+<script>
+function myFunction(x) {
+    x.classList.toggle("change");
+	$('.nav-wrap').toggleClass('active');
+}
+</script>
 
 </body>
 

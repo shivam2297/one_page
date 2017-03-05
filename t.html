@@ -8,39 +8,102 @@
 <title>Untitled Document</title>
 </head>
 
-<body>
+<style>
+.nav-wrapper {
+  list-style: none;
+  float: right;
+  padding:0;
+}
 
-<canvas height="900" width="900" id="loader" style="border:1px dashed #ccc">
-        </canvas>
-    
-<div class="container">
-	<div class="row">
-    	<div class="col-md-3" id="cloader" style="border:1px dashed #ccc">
-        	
-        </div>
-    </div>
-</div>       
+.nav-wrapper > li {
+  float: right;
+  overflow: hidden;
+}
+
+.navmenu {
+  list-style: none;
+  margin-left: -1000px;
+  transition: 0.3s;
+}
+
+.nav-wrapper.active .navmenu {
+  margin-left: 10;
+  transition: 0.3s;
+}
+
+.navmenu > li {
+  float: left;
+  /*width: 18px;*/
+  margin: 0 5px;
+  /*border: 1px solid red;*/
+}
+/*
+#menu::after {
+  display: block;
+  content: "OPEN";
+  width: 60px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.nav-wrapper.active > #menu::after {
+  content: "CLOS"
+}*/
+
+.menu-icon {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+}
+</style>
+
+
+
+<body>
+<div style="width:auto">
+	<div class="menu-icon" onClick="myFunction(this)" style="float:left; width:35px">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>      
+	</div>
+    <div style="float: left; display:inline-block">
+      <ul class="nav-wrapper">
+        <li>
+          <ul class="navmenu h4">
+            <li><a href="#" id="aboutlink" onclick="move(this.id)">About Me</a></li>
+            <li><a href="#" id="profilelink" onclick="move(this.id)">Developer Profile</a></li>
+            <li><a href="#" id="guidelink" onclick="move(this.id)">Carreer Guide</a></li>
+            <li><a href="#" id="contactlink" onclick="move(this.id)">Contact Me</a></li>
+          </ul>    
+        </li>
+      </ul>
+     </div>
+</div>
 <script>
-	var ctx = document.getElementById('loader').getContext('2d');
-	var al = 0;
-	var start  = 4.72;
-	var cw = ctx.canvas.width;
-	var ch = ctx.canvas.height;
-	var diff;
-	function progresssim(){
-			diff = ((al/100) * Math.PI*2*10).toFixed(2);
-			ctx.clearRect(0,0,cw,ch);
-			ctx.lineWidth = 10;
-			ctx.strokeStyle = "#09f";
-			ctx.beginPath();
-			ctx.arc(450,450,400,start,diff/10+start,false);
-			ctx.stroke();
-			
-			if(al >= 100)
-				clearTimeout(sim);
-			al++;
-	}
-	var sim = setInterval(progresssim, 50);
+function myFunction(x) {
+    x.classList.toggle("change");
+	$('.nav-wrapper').toggleClass('active');
+}
 </script>
+
 </body>
 </html>

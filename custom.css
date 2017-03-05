@@ -4,9 +4,12 @@ html{
 		overflow: hidden;
 		
 	}
-	
+	audio{
+		volume:0.2;
+	}
 	.section{
 		height:100vh;
+		width:100vw;
 		overflow: hidden;
 	}
 	.nopadding {
@@ -66,9 +69,8 @@ html{
 		padding:0;
 		margin:0;
 		vertical-align:middle;
-		background: rgba(0,0,0,1);
+		background: rgba(0,0,0,1);	
 		background-attachment:fixed;
 		background-size:cover;
 		-webkit-background-size:cover;
 	}
-	
