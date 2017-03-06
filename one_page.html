@@ -29,14 +29,14 @@
 .navmenu {
 	list-style: none;
 	margin-left: -1000px;
-	transition: 0.3s;
+	transition: 0.7s;
 }
 
 .nav-wrap.active .navmenu {
 	/*opacity: 0;*/
 	padding-left:0;
 	margin-left: 10px;
-	transition: 0.3s;
+	transition: 0.7s;
 }
 
 .navmenu > li {
@@ -56,7 +56,7 @@
     height: 0.3125em;
     background-color: #333;
     margin: 6px 0;
-    transition: 0.4s;
+    transition: 0.7s;
 }
 
 .change .bar1 {
@@ -74,7 +74,7 @@
 	color:rgba(255,255,255,1);
 	position:fixed;
 	width:auto;
-	z-index:+1;
+	z-index:+3;
 	/*border:dashed;*/
 	background-color:rgba(255,255,255,1);
 	padding: 0.625em 0.9375em 0.625em 0.9375em;
@@ -87,46 +87,29 @@
 
 
 
-<!--nav class="navbar navbar-inverse navbar-fixed-top nomargin" id="navbar">
-<!--	<div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-      	<span class="icon-bar"></span>
-      <span class="icon-bar"></span>2</button>
-      <a class="navbar-brand" href="#" id="homelink" onclick="move(this.id)">WebSiteName</a> 
-     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-    	<ul class="nav navbar-nav">
-    	<li><a href="#" id="aboutlink" onclick="move(this.id)">About Me</a></li>
-    	<li><a href="#" id="profilelink" onclick="move(this.id)">Developer Profile</a></li>
-    	<li><a href="#" id="guidelink" onclick="move(this.id)">Carreer Guide</a></li>
-    	<li><a href="#" id="contactlink" onclick="move(this.id)">Contact Me</a></li>
-        </ul>
-    </div>
-    </div> -->
-    <div class="container menu-wrap">
-        <div class="menu-icon" onClick="myFunction(this)" style="float:left;">
-          <div class="bar1"></div>
-          <div class="bar2"></div>
-          <div class="bar3"></div>      
-        </div>
-        <div style="float: left; display:inline-block;">
-          <ul class="nav-wrap">
-          	
-            <li>
-            	
-              <ul class="navmenu h4">
-              	<li><a href="#" id="homelink" onclick="move(this.id)">HOME</a></li>
-                <li><a href="#" id="aboutlink" onclick="move(this.id)">About Me</a></li>
-                <li><a href="#" id="profilelink" onclick="move(this.id)">Developer Profile</a></li>
-                <li><a href="#" id="guidelink" onclick="move(this.id)">Carreer Guide</a></li>
-                <li><a href="#" id="contactlink" onclick="move(this.id)">Contact Me</a></li>
-              </ul>    
-            </li>
-          </ul>
-        </div>
-    </div>
-<!--/nav-->
+<div class="container menu-wrap">
+  <div class="menu-icon" onClick="myFunction(this)" style="float:left;">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>      
+  </div>
+  <div style="float: left; display:inline-block;">
+    <ul class="nav-wrap">
+      
+      <li>
+          
+        <ul class="navmenu h4">
+          <li><a href="#" id="homelink" onclick="move(this.id)">HOME</a></li>
+          <li><a href="#" id="aboutlink" onclick="move(this.id)">About Me</a></li>
+          <li><a href="#" id="profilelink" onclick="move(this.id)">Developer Profile</a></li>
+          <li><a href="#" id="guidelink" onclick="move(this.id)">Carreer Guide</a></li>
+          <li><a href="#" id="contactlink" onclick="move(this.id)">Contact Me</a></li>
+        </ul>    
+      </li>
+    </ul>
+  </div>
+</div>
+
 
 <div class="jumbotron nopadding" id="home">
 	
@@ -224,7 +207,7 @@
             </div>
         </div>
     </div>
-    <img src="images/down_arrow.png" style="bottom:0; right:0; position:absolute"/>
+    <!--img src="images/down_arrow.png" style="bottom:200vh; right:0; position:absolute"/-->
 </div>
 
 <div class="container-fluid section" id="carrer_guide">
@@ -245,6 +228,8 @@ function myFunction(x) {
 	$('.nav-wrap').toggleClass('active');
 }
 </script>
+
+<script type="text/javascript" src="canvas-nest.js" color="255,0,0" zIndex="+2" count="250" opacity="1"></script>
 
 </body>
 

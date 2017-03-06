@@ -17,6 +17,9 @@ function move(id){
 		$('html, body').animate({scrollTop: $('#carrer_guide').offset().top}, 2000);
 		if(id=="contactlink")
 		$('html, body').animate({scrollTop: $('#contact').offset().top}, 2000);
+		
+		$('.nav-wrap').toggleClass('active');
+		$('.menu-icon').toggleClass('change');
 	}
 	
 
@@ -48,9 +51,17 @@ $(window).scroll(function () {
 				  
 			  }
 		  });
-	console.log("scroll fade");
+	//console.log("scroll fade");
 	});
 	
+
+$(window).scroll(function(){
+		if($(window).scrollTop()==$('#home').offset().top)
+			$('.particles').fadeIn(500);
+		else
+			$('.particles').fadeOut(1000);
+		console.log("scrolled");
+	});
 	
 	
 /***skillbars canvas***/
@@ -67,7 +78,7 @@ $(window).scroll(function(){
 		}
 		else
 			$('.skillbar').fadeOut(1000);
-		console.log("scrolled");
+		//console.log("scrolled");
 	});
 
 function load_skills(id, v, color){
